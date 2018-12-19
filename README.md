@@ -1,4 +1,4 @@
-# DeHTML - A stater HTML Template using Pug, Sass, Webpack, Gulp.
+# DeHTML - A starter HTML Template using Pug, Sass, Webpack, Gulp.
 
 Start to build your next web page without extra configuration.
 
