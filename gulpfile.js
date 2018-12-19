@@ -2,7 +2,7 @@ const gulp = require("gulp")
 const pug = require("gulp-pug")
 const sass = require("gulp-sass")
 const postcss = require("gulp-postcss")
-const autoprefixer 	= require("autoprefixer")
+const autoprefixer = require("autoprefixer")
 const perfectionist = require("perfectionist")
 const plumber = require("gulp-plumber")
 const notify = require("gulp-notify")
@@ -81,7 +81,7 @@ gulp.task('webpack', () =>
 );
 
 // HTML beutify
-gulp.task("beautify", () =>
+gulp.task('beautify', () =>
 	gulp.src([`${dist}*.html`])
 		.pipe(beautify({
 			indent_char: '\t',
@@ -104,6 +104,7 @@ gulp.task('watch', () => {
 	gulp.watch(`${src}pug/*.pug`, ['pug'])
 	gulp.watch(`${src}sass/*.sass`, ['sass'])
 	gulp.watch(`${src}js/*.js`, ['webpack'])
+	gulp.watch(`${src}img/**/**`, ['compress'])
 });
 
 gulp.task('default', ['pug', 'sass', 'vendor', 'cleanjs', 'webpack', 'compress', 'watch']);
