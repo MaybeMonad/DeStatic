@@ -1,0 +1,12 @@
+extends layout/head
+block title
+	title Demo Page – Starter HTML Template by Dezineleo
+block content
+	body#homepage
+		.wrap
+			include layout/navigation
+			main
+				.container
+					h1(style={ 'margin-top': '80px' }) My Works<br>Dezineleo
+			include layout/footer
+		include layout/js
