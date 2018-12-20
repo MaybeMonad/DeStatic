@@ -2,7 +2,7 @@ const gulp = require("gulp")
 const pug = require("gulp-pug")
 const sass = require("gulp-sass")
 const postcss = require("gulp-postcss")
-const autoprefixer = require("autoprefixer")
+const autoprefixer 	= require("autoprefixer")
 const perfectionist = require("perfectionist")
 const plumber = require("gulp-plumber")
 const notify = require("gulp-notify")
@@ -69,7 +69,7 @@ gulp.task('cleanjs', () =>
 	gulp.src(`${dist}js/app.js`)
 		.pipe(gprint())
 		.pipe(vinylPaths(del))
-);
+)
 
 // Build JS Files
 gulp.task('webpack', () =>
@@ -78,7 +78,7 @@ gulp.task('webpack', () =>
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(dist + "js"))
 		.pipe(browserSync.stream())
-);
+)
 
 // HTML beutify
 gulp.task('beautify', () =>
@@ -88,23 +88,24 @@ gulp.task('beautify', () =>
 			indent_size: 1
 		}))
 		.pipe(gulp.dest(dist))
-);
+)
 
 // Imagemin
 gulp.task('compress', () =>
-	gulp.src([`${src}img/**/**`])
+	gulp.src([`${src}img/**`, `${src}img/**/**`])
 		.pipe(imagemin())
 		.pipe(gulp.dest(dist + 'img'))
-);
+		.pipe(browserSync.stream())
+)
 
 gulp.task('watch', () => {
 	browserSync.init({
 		server: "./dist"
-	});
+	})
 	gulp.watch(`${src}pug/*.pug`, ['pug'])
 	gulp.watch(`${src}sass/*.sass`, ['sass'])
 	gulp.watch(`${src}js/*.js`, ['webpack'])
-	gulp.watch(`${src}img/**/**`, ['compress'])
-});
+	gulp.watch(`${src}img/**`, ['compress'])
+})
 
-gulp.task('default', ['pug', 'sass', 'vendor', 'cleanjs', 'webpack', 'compress', 'watch']);
+gulp.task('default', ['pug', 'sass', 'vendor', 'cleanjs', 'webpack', 'compress', 'watch'])
