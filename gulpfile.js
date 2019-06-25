@@ -1,38 +1,35 @@
-const gulp = require("gulp")
-const pug = require("gulp-pug")
-const sass = require("gulp-sass")
-const postcss = require("gulp-postcss")
-const autoprefixer 	= require("autoprefixer")
-const perfectionist = require("perfectionist")
-const plumber = require("gulp-plumber")
-const notify = require("gulp-notify")
-const concat = require("gulp-concat")
-const beautify = require("gulp-html-beautify")
-// const babel = require('gulp-babel')
-// const uglify = require('gulp-uglify')
+const gulp = require('gulp')
+const pug = require('gulp-pug')
+const sass = require('gulp-sass')
+const postcss = require('gulp-postcss')
+const autoprefixer 	= require('autoprefixer')
+const perfectionist = require('perfectionist')
+const plumber = require('gulp-plumber')
+const notify = require('gulp-notify')
+const concat = require('gulp-concat')
+const beautify = require('gulp-html-beautify')
 const imagemin = require('gulp-imagemin')
 const webpack = require('webpack-stream')
 const gprint = require('gulp-print').default
-// const gutil = require("gulp-util")
 const del = require('del')
 const vinylPaths = require('vinyl-paths')
 const size = require('gulp-size')
 const sourcemaps = require('gulp-sourcemaps')
 const browserSync = require('browser-sync').create()
 
-const src = "./src/";
-const dist = "./dist/";
+const src = './src/'
+const dist = './dist/'
 
 // Pug
-gulp.task("pug", () => 
+gulp.task('pug', () => 
 	gulp.src([`${src}pug/*.pug`, `!${src}pug/layout/*.pug`])
 		.pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
 		.pipe(pug({
-			pretty: "\t"
+			pretty: '\t'
 		}))
 		.pipe(gulp.dest(dist))
 		.pipe(browserSync.stream())
-);
+)
 
 // Generate Sass
 gulp.task("sass", () => {
@@ -46,7 +43,7 @@ gulp.task("sass", () => {
 		.pipe(postcss(processors))
 		.pipe(gulp.dest(dist + "css"))
 		.pipe(browserSync.stream())
-});
+})
 
 // Generate Vendor CSS & JS Files
 gulp.task('vendor', () => {
@@ -80,7 +77,7 @@ gulp.task('webpack', () =>
 		.pipe(browserSync.stream())
 )
 
-// HTML beutify
+// HTML beautify
 gulp.task('beautify', () =>
 	gulp.src([`${dist}*.html`])
 		.pipe(beautify({
@@ -98,6 +95,7 @@ gulp.task('compress', () =>
 		.pipe(browserSync.stream())
 )
 
+// Watch changes
 gulp.task('watch', () => {
 	browserSync.init({
 		server: "./dist"
