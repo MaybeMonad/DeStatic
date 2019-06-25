@@ -1,10 +1,10 @@
 {
   "name": "dehtml",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A starter HTML template",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp"
   },
   "author": "Dezineleo",
   "license": "ISC",
@@ -15,7 +15,6 @@
     "gulp-html-beautify": "^1.0.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-notify": "^3.2.0",
-    "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^8.0.0",
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.0.1",

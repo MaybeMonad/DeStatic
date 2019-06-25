@@ -5,7 +5,7 @@
     03. Footer
     04. Responsive
     */
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 /* 01. Common */
 
@@ -73,7 +73,8 @@ a {
     color: #1890ff;
     border-bottom: 2px solid rgba(24, 144, 255, .32);
     text-decoration: none;
-    transition: 200ms border-color ease-in-out, 200ms color ease-in-out;
+    -webkit-transition: 200ms border-color ease-in-out, 200ms color ease-in-out;
+            transition: 200ms border-color ease-in-out, 200ms color ease-in-out;
 }
 
 a:hover {
@@ -127,6 +128,10 @@ main {
     color: #ccccd4;
 }
 
+::-moz-placeholder {
+    color: #ccccd4;
+}
+
 :-ms-input-placeholder {
     color: #ccccd4;
 }
@@ -148,9 +153,10 @@ header {
     width: 100%;
     background-color: #fff;
     z-index: 999;
-    transition: 200ms opacity ease-in, 200ms -webkit-transform ease-in;
-    transition: 200ms transform ease-in, 200ms opacity ease-in;
-    transition: 200ms transform ease-in, 200ms opacity ease-in, 200ms -webkit-transform ease-in;
+    -webkit-transition: 200ms opacity ease-in, 200ms -webkit-transform ease-in;
+            transition: 200ms opacity ease-in, 200ms -webkit-transform ease-in;
+            transition: 200ms transform ease-in, 200ms opacity ease-in;
+            transition: 200ms transform ease-in, 200ms opacity ease-in, 200ms -webkit-transform ease-in;
 }
 
 header .logo {
@@ -187,7 +193,8 @@ header nav ul li a, header nav ul li span {
     color: #272838;
     border-bottom: 2px solid rgba(24, 144, 255, 0);
     padding-bottom: 4px;
-    transition: 200ms color ease-in-out, 200ms border-color ease-in-out;
+    -webkit-transition: 200ms color ease-in-out, 200ms border-color ease-in-out;
+            transition: 200ms color ease-in-out, 200ms border-color ease-in-out;
 }
 
 header nav ul li a:hover, header nav ul li span:hover {
@@ -222,7 +229,8 @@ header .nav-toggle {
     color: #1890ff;
     border-bottom: 2px solid rgba(24, 144, 255, .32);
     padding-bottom: 4px;
-    transition: 200ms color ease-in-out, 200ms border-color ease-in-out;
+    -webkit-transition: 200ms color ease-in-out, 200ms border-color ease-in-out;
+            transition: 200ms color ease-in-out, 200ms border-color ease-in-out;
 }
 
 header .nav-toggle:hover {
@@ -243,7 +251,7 @@ footer {
     padding: 80px 0;
 }
 
-/* 10. Responsive */
+/* 04. Responsive */
 
 @media screen and (max-width: 1024px) {
     .spacer {
@@ -255,6 +263,7 @@ footer {
     }
 
     header nav {
+        display: -webkit-box;
         display: flex;
         position: fixed;
         top: 0;
@@ -267,7 +276,8 @@ footer {
         padding-top: 32px;
         opacity: 0;
         visibility: hidden;
-        transition: 100ms opacity linear, 100ms visibility linear;
+        -webkit-transition: 100ms opacity linear, 100ms visibility linear;
+                transition: 100ms opacity linear, 100ms visibility linear;
     }
 
     header nav ul {
@@ -386,14 +396,5 @@ footer {
 
     .spacer {
         padding: 0 15px;
-    }
-
-    footer .footer-contacts {
-        margin: 48px 0;
-        text-align: left;
-    }
-
-    footer .social-links {
-        text-align: left;
     }
 }
