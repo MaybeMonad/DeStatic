@@ -1,0 +1,83 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.17.3/libexec/bin/yarn.js add @babel/core @babel/preset-env babel-loader babel-preset-env gulp gul-babel webpack webpack-dev-server webpack-stream -D
+
+PATH: 
+  /Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Library/Frameworks/Python.framework/Versions/3.7/bin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  11.14.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/gul-babel: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:66830:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:140464:22)
+      at Request.emit (events.js:193:13)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:141436:10)
+      at Request.emit (events.js:193:13)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:141358:12)
+      at Object.onceWrapper (events.js:281:20)
+      at IncomingMessage.emit (events.js:198:15)
+      at endReadableNT (_stream_readable.js:1139:12)
+      at processTicksAndRejections (internal/process/task_queues.js:81:17)
+
+npm manifest: 
+  {
+    "name": "dehtml",
+    "version": "1.0.1",
+    "description": "A starter HTML template",
+    "main": "gulpfile.js",
+    "scripts": {
+      "dev": "gulp"
+    },
+    "author": "Dezineleo",
+    "license": "ISC",
+    "dependencies": {
+      "autoprefixer": "^9.1.0",
+      "gulp": "^3.9.1",
+      "gulp-concat": "^2.6.1",
+      "gulp-html-beautify": "^1.0.1",
+      "gulp-imagemin": "^4.1.0",
+      "gulp-notify": "^3.2.0",
+      "gulp-postcss": "^8.0.0",
+      "gulp-pug": "^4.0.1",
+      "gulp-sass": "^4.0.1",
+      "npm": "^6.4.1",
+      "perfectionist": "^2.4.0"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.2.2",
+      "@babel/preset-env": "^7.2.0",
+      "babel-loader": "^8.0.6",
+      "babel-preset-env": "^1.7.0",
+      "browser-sync": "^2.26.3",
+      "del": "^3.0.0",
+      "desandro-classie": "^1.0.1",
+      "gulp": "^3.9.1",
+      "gulp-babel": "^8.0.0",
+      "gulp-eslint": "^5.0.0",
+      "gulp-imagemin": "^4.1.0",
+      "gulp-livereload": "^4.0.1",
+      "gulp-plumber": "^1.2.1",
+      "gulp-print": "^5.0.0",
+      "gulp-size": "^3.0.0",
+      "gulp-sourcemaps": "^2.6.4",
+      "gulp-uglify": "^3.0.1",
+      "gulp-util": "^3.0.8",
+      "vinyl-paths": "^2.1.0",
+      "webpack": "^4.27.1",
+      "webpack-dev-server": "^3.1.10",
+      "webpack-stream": "^5.2.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
